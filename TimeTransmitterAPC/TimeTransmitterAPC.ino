@@ -17,7 +17,7 @@
 RTC_DS1307 rtc;
 
 SoftwareSerial mySerial(10, 11);
-
+unsigned long time;
 void setup() {
     pinMode(A3, OUTPUT);
     digitalWrite(A3, HIGH);
@@ -41,8 +41,8 @@ void setup() {
 void loop() {
 
     DateTime now = rtc.now();
-
-    Serial.print(now.hour(), DEC);
+  
+   /* Serial.print(now.hour(), DEC);
     Serial.print(':');
     Serial.print(now.minute(), DEC);
     Serial.print(':');
@@ -54,7 +54,9 @@ void loop() {
     mySerial.print(now.minute(), DEC);
     mySerial.print(':');
     mySerial.print(now.second(), DEC);
-    mySerial.println();
-
-    delay(100);
+    mySerial.println(); */
+    
+    time = micros();
+    Serial.println(time);
+    mySerial.println(time);
 }
