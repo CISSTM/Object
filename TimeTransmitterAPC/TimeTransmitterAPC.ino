@@ -6,7 +6,7 @@
     Wirering antenna:
     APC220 > Arduino
     gnd > gnd
-    vcc > 5V
+    vcc > 5V 
     en > Not connected
     RXD > D3
     TXD > D2
@@ -42,7 +42,7 @@ void loop() {
 
     DateTime now = rtc.now();
   
-   /* Serial.print(now.hour(), DEC);
+   Serial.print(now.hour(), DEC);
     Serial.print(':');
     Serial.print(now.minute(), DEC);
     Serial.print(':');
@@ -54,9 +54,10 @@ void loop() {
     mySerial.print(now.minute(), DEC);
     mySerial.print(':');
     mySerial.print(now.second(), DEC);
-    mySerial.println(); */
-    
-    time = micros();
+    mySerial.println();
+    delay(100);
+    /*time = micros();
     Serial.println(time);
-    mySerial.println(time);
+    mySerial.println(time);*/
+ 
 }
